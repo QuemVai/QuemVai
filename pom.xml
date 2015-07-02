@@ -6,13 +6,12 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
   <modules>
-    <module>quemvai-matar</module>
     <module>quemvai-db</module>
   </modules>
   
   <parent>
         <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
+        <artifactId>spring-boot-starter-parent</artifactId> 
         <version>1.2.4.RELEASE</version>
     </parent>
     
