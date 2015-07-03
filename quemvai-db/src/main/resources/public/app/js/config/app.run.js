@@ -3,15 +3,16 @@
 	
 
 	angular
-	.module('quemvai-causamorte').run(['$rootScope', '$window', 
-  function($rootScope, $window) {
+	.module('quemvai-causamorte').run(['$rootScope', '$window','$location', 
+  function($rootScope, $window, $location) {
 
   $rootScope.user = {};
   $rootScope.facebookOk = false;
+  $rootScope.appId = '1597681720486698';
   
   $window.fbAsyncInit = function() {
 	    FB.init({ 
-	      appId: '1597681720486698',
+	      appId: $rootScope.appId,
 	      status: true, 
 	      cookie: true, 
 	      xfbml: true,
@@ -21,11 +22,12 @@
 	    getLogged();
 		function getLogged(sucesso,erro){
 			 FB.getLoginStatus(function(response) {
-				 if(response.status == "not_authorized"){
-					 login();
-				 }else{
-					 
+				 if(response.status == "connected"){
 					 checkPermission();
+					
+				 }else{
+					 login();
+					 
 			
 				 }
 			 });
@@ -48,12 +50,7 @@
 			});
 		}
 		function login(){
-		    FB.login(function(response) {
-		    	   // handle the response
-		    	 }, {
-		    	   scope: 'email,user_friends,user_status', 
-		    	   return_scopes: true
-		    	 });
+			$location.path("/login");
 		}
 	};
 

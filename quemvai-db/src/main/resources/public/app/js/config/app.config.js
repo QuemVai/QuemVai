@@ -14,7 +14,8 @@
 		var rotas = [
 		             { rota: '/', folder: '', controller: 'causamorte', resolve : { causaMorte : initializer().causaMorte,
 		            	 assasino:  initializer().assasino
-		            	 } }
+		            	 } },
+		             { rota: '/login', folder: '', controller: 'login' }
 		             ];
 		
 		function initializer() {
