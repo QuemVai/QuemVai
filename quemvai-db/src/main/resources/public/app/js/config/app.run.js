@@ -10,14 +10,9 @@
   $rootScope.facebookOk = false;
   $rootScope.appId = '1597681720486698';
   
-  $window.fbAsyncInit = function() {
-	    FB.init({ 
-	      appId: $rootScope.appId,
-	      status: true, 
-	      cookie: true, 
-	      xfbml: true,
-	      version: 'v2.3'
-	    });
+ 
+	  $rootScope.$FB = FB;
+	  
 	    $rootScope.facebookOk = true;
 	    getLogged();
 		function getLogged(sucesso,erro){
@@ -56,17 +51,6 @@
 
 }]);
 	
-	// Load the SDK Asynchronously
-	(function(d) {
-		var js, id = 'facebook-jssdk';
-		if (d.getElementById(id)) {
-			return;
-		}
-		js = d.createElement('script');
-		js.id = id;
-		js.async = true;
-		js.src = "//connect.facebook.net/en_US/all.js";
-		d.getElementsByTagName('head')[0].appendChild(js);
-	}(document));
+	
 
 })();

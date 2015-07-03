@@ -10,7 +10,6 @@
 	function loginCtrl($scope,$location) {
 		
 		var vm = this;
-		
 		vm.onLoginStatusChange = onLoginStatusChange;
 		
 		function onLoginStatusChange(response){

@@ -4,6 +4,6 @@
 	angular
 		.module('quemvai-causamorte', [
 		                'ngRoute', 'ngResource', 'ngSanitize',
-		                'gLoader'
+		                'gLoader','facebook'
 		                ]);
 })();

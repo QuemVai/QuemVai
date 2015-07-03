@@ -5,9 +5,12 @@
 		.module('quemvai-causamorte')
 		.config(config);
 	
-	config.$inject = ['$routeProvider', '$httpProvider'];
+	config.$inject = ['$routeProvider', '$httpProvider','FacebookProvider'];
 	
-	function config($routeProvider, $httpProvider) {
+	function config($routeProvider, $httpProvider,FacebookProvider) {
+		
+		FacebookProvider.init('1597681720486698');
+		
 		$httpProvider.interceptors.push('httpInterceptor');
 		$httpProvider.interceptors.push('loaderFactory');
 		
@@ -50,6 +53,8 @@
 	    }
 
     	$routeProvider.otherwise({ redirectTo : rotas[0].rota });
+    	
+    	
 	}
 	
 })();
